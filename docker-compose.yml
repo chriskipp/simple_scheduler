@@ -1,0 +1,24 @@
+version: '3.3'
+
+#networks:
+#  mynet:
+#    ipam:
+#      config:
+#        - subnet: "10.3.3.0/24"
+
+services:
+
+  scheduler:
+    container_name: scheduler
+    build: scheduler
+    restart: always
+    #networks:
+    #  - myovernet
+    ports:
+      - "8888:8888" # is
+      - "7777:7777" # Shoud
+    volumes:
+      - ./scheduler/data:/src/scheduler/data
+
+
+
