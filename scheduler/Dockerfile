@@ -11,6 +11,7 @@ RUN python3 -m pip --no-cache-dir install -U pip wheel
 RUN git clone "https://github.com/chriskipp/ndscheduler" \
   && cd ndscheduler \
   && sed -i 's/ndscheduler-fork/ndscheduler/g' setup.py \
+  && sed -i 's/"SQLAlchemy >= 1.0.0"/"SQLAlchemy == 1.4.0"/g' setup.py \
   && python3 -m pip install . \
   && cd -
   #&& python3 setup.py install \
